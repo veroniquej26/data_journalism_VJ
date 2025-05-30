@@ -1,0 +1,39 @@
+
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
+  
+  <title>Dog Bites in NYC</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>Dog Bites in NYC - Veronique Jeneste</h1>
+  
+  <div id="line_graph_all">
+    {% include 'line_graph.svg' %}
+  </div>
+
+  <div>
+
+    <form action="/year" method="GET">
+      <label for="year_select">Choose a year:</label><br>
+      <select name="year" id="year_select">
+      </select>
+      <script>
+        const select = document.getElementById("year_select");
+        for (let year = 2015; year <= 2023; year++) {
+          const option = document.createElement("option");
+          option.value = year;
+          option.text = year;
+          select.appendChild(option);
+        }
+      </script>
+      <input type="submit" value="Submit">
+    <form>
+  </div>
+
+</body>
+</html>

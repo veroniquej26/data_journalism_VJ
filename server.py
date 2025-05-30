@@ -1,0 +1,94 @@
+# flask --app data_server run
+
+from flask import Flask
+from flask import render_template
+from flask import request
+from data.reformat_data import dictionary 
+import json
+
+"""
+app = Flask(__name__, static_url_path='', static_folder='static')
+
+with open("data/data_bite.json") as f:
+    bite_data = json.load(f)
+
+
+@app.route('/')
+def index():
+    f = open("data/data_bite.json", "r")
+    data = json.load(f)
+    f.close()
+    bronx_endpoints = []
+    brooklyn_endpoints = []
+    manhattan_endpoints = []
+    queens_endpoints = []
+    staten_island_endpoints = []
+
+    years = sorted([int(y) for y in data["Bronx"].keys()])
+
+    for i in range(len(years) - 1):
+        year1 = str(years[i])
+        year2 = str(years[i + 1])
+
+        bx_y1 = float(data["Bronx"][year1])
+        bx_y2 = float(data["Bronx"][year2])
+        bronx_endpoints.append([bx_y1, bx_y2])
+
+        bk_y1 = float(data["Brooklyn"][year1])
+        bk_y2 = float(data["Brooklyn"][year2])
+        brooklyn_endpoints.append([bk_y1, bk_y2])
+
+        m_y1 = float(data["Manhattan"][year1])
+        m_y2 = float(data["Manhattan"][year2])
+        manhattan_endpoints.append([m_y1, m_y2])
+
+        q_y1 = float(data["Queens"][year1])
+        q_y2 = float(data["Queens"][year2])
+        manhattan_endpoints.append([q_y1, q_y2])
+
+        si_y1 = float(data["Staten Island"][year1])
+        si_y2 = float(data["Staten Island"][year2])
+        manhattan_endpoints.append([si_y1, si_y2])
+
+
+
+
+    return render_template(
+    "index.html",
+    bronx_endpoints = bronx_endpoints,
+    brooklyn_endpoints = brooklyn_endpoints,  
+    manhattan_endpoints = manhattan_endpoints,
+    queens_endpoints = queens_endpoints,
+    staten_island_endpoints = staten_island_endpoints,
+    years=years
+    )
+
+    print (data)
+@app.route('/year')
+
+def year(): 
+    f = open("data/data_bite.json", "r")
+    data = json.load(f)
+    f.close()
+    year = request.args.get("year")
+
+    bx_val = float(data["Bronx"][str(year)])
+    bk_val = float(data["Brooklyn"][str(year)])
+    man_val = float(data["Manhattan"][str(year)]) 
+    q_val = float(data["Queens"][str(year)]) 
+    si_val = float(data["Staten Island"][str(year)]) 
+
+
+    return render_template(
+        #"index.html",
+        "year.html",
+        year=year,
+        bx_val = bx_val,
+        bk_val = bk_val,
+        man_val = man_val,
+        q_val = q_val,
+        si_val = si_val
+    )
+
+app.run(debug=True)
+"""

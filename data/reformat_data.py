@@ -49,7 +49,7 @@ f1.close()
 
 # save the json object to a file 
 
-f2 = open("data.json", "w")
+f2 = open("data_bite.json", "w")
 json.dump(dictionary, f2, indent = 4)
 
 f2.close()

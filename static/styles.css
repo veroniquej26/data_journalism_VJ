@@ -1,0 +1,13 @@
+body{
+    background-color: #baf1df;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  svg{
+    border-style: solid;
+    border-width: 1px;
+  }
+  
