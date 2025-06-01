@@ -12,29 +12,36 @@
 </svg> -->
 
 <style>
-  .line_b:hover line {
+  .line_bronx:hover line {
     stroke: darkred;
     stroke-width: 6;
   }
 </style>
 
 <style>
-  .line_Canada:hover line {
+  .line_brooklyn:hover line {
     stroke: darkblue;
     stroke-width: 5;
   }
 </style>
 
 <style>
-  .line_Mexico:hover line {
+  .line_manhattan:hover line {
     stroke: darkgreen;
     stroke-width: 5;
   }
 </style>
 
 <style>
-  .line_Universal:hover line {
+  .line_queens:hover line {
     stroke: black;
+    stroke-width: 5;
+  }
+</style>
+
+<style>
+  .line_staten_island:hover line {
+    stroke: darkyellow;
     stroke-width: 5;
   }
 </style>

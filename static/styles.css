@@ -11,3 +11,13 @@ body{
     border-width: 1px;
   }
   
+
+  footer {
+    position: bottom;
+    bottom: 100;
+    width: 100%;
+  }
+
+  .navbar-brand {
+    font-weight: bold;
+  }
