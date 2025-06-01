@@ -12,7 +12,7 @@
 </svg> -->
 
 <style>
-  .line_US:hover line {
+  .line_b:hover line {
     stroke: darkred;
     stroke-width: 6;
   }

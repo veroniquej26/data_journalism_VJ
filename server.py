@@ -6,14 +6,17 @@ from flask import request
 from data.reformat_data import dictionary 
 import json
 
-"""
+
 app = Flask(__name__, static_url_path='', static_folder='static')
 
 with open("data/data_bite.json") as f:
     bite_data = json.load(f)
 
-
 @app.route('/')
+def about():
+    return render_template("about.html")
+
+@app.route('/index')
 def index():
     f = open("data/data_bite.json", "r")
     data = json.load(f)
@@ -44,11 +47,11 @@ def index():
 
         q_y1 = float(data["Queens"][year1])
         q_y2 = float(data["Queens"][year2])
-        manhattan_endpoints.append([q_y1, q_y2])
+        queens_endpoints.append([q_y1, q_y2])
 
         si_y1 = float(data["Staten Island"][year1])
         si_y2 = float(data["Staten Island"][year2])
-        manhattan_endpoints.append([si_y1, si_y2])
+        staten_island_endpoints.append([si_y1, si_y2])
 
 
 
@@ -91,4 +94,4 @@ def year():
     )
 
 app.run(debug=True)
-"""
+

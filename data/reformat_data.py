@@ -5,8 +5,6 @@ f1 = open("data/data_original_2.csv", "r")
 lines = f1.readlines()
 #yr_keys = lines[1].strip().split(",")
 
-dict = {}
-
 year_list = []
 year_list = lines[1].split(",")[1:]
 #print(yr_keys)
@@ -53,26 +51,3 @@ f2 = open("data_bite.json", "w")
 json.dump(dictionary, f2, indent = 4)
 
 f2.close()
-
-"""
-borough_list = lines[2].split
-new_yr_list = []
-
-for yr in year_list:
-    year = year_list[::-4]
-    new_yr_list.append(year)
-
-dog_bite_dict = {}
-
-for num in range(len(new_yr_list)):
-    dog_bite_dict[num] = new_yr_list[num]
-
-f1.close()
-
-# save the json object to a file 
-
-f2 = open("data.json", "w")
-json.dump(dog_bite_dict, f2, indent = 4)
-
-f2.close()
-"""
