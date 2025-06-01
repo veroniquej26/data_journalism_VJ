@@ -1,0 +1,120 @@
+
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
+  
+  <title>Life Expectancy Lab - Veronique Jeneste</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+  <nav class="navbar navbar-expand-lg navbar-white bg-white">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Data Journalism</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/index">Data</a>
+          </li>
+          <li> 
+            <form action="/year" method="GET">
+                <select name="year" id="year_select">
+                </select>
+                <script>
+                const select = document.getElementById("year_select");
+                for (let year = 2015; year <= 2023; year++) {
+                    const option = document.createElement("option");
+                    option.value = year;
+                    option.text = year;
+                    select.appendChild(option);
+                }
+                </script>
+            <input type="submit" value="Submit">
+            <form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <h1>Dog Bites in NYC - {{ year }}</h1>
+    {% include 'boroughs.svg' %}
+  </div>
+
+  <svg width = 400>
+      <rect x="0" y="0" width="80" height="80" fill="hsl(228, 70%, 55%)" stroke="none" stroke-width="2" />
+      <rect x="80" y="0" width="80" height="80" fill="hsl(228, 70%, 45%)" stroke="none" stroke-width="2" />
+      <rect x="160" y="0" width="80" height="80" fill="hsl(228, 70%, 40%)" stroke="none" stroke-width="2" />
+      <rect x="240" y="0" width="80" height="80" fill="hsl(228, 70%, 35%)" stroke="none" stroke-width="2" />
+      <rect x="320" y="0" width="80" height="80" fill="hsl(228, 70%, 30%)" stroke="none" stroke-width="2" />
+
+      <rect x="0" y="80" width="80" height="80" fill="hsl(228, 70%, 25%)" stroke="none" stroke-width="2" />
+      <rect x="80" y="80" width="80" height="80" fill="hsl(228, 70%, 20%)" stroke="none" stroke-width="2" />
+      <rect x="160" y="80" width="80" height="80" fill="hsl(228, 70%, 15%)" stroke="none" stroke-width="2" />
+      <rect x="240" y="80" width="80" height="80" fill="hsl(228, 70%, 10%)" stroke="none" stroke-width="2" />
+      <rect x="320" y="80" width="80" height="80" fill="hsl(228, 70%, 5%)" stroke="none" stroke-width="2" />
+
+      <text x="40" y="40" text-anchor="middle" font-size="12" fill="white">50</text>
+      <text x="120" y="40" text-anchor="middle" font-size="12" fill="white">55</text>
+      <text x="200" y="40" text-anchor="middle" font-size="12" fill="white">60</text>
+      <text x="280" y="40" text-anchor="middle" font-size="12" fill="white">65</text>
+      <text x="360" y="40" text-anchor="middle" font-size="12" fill="white">70</text>
+
+      <text x="40" y="120" text-anchor="middle" font-size="12" fill="white">75</text>
+      <text x="120" y="120" text-anchor="middle" font-size="12" fill="white">80</text>
+      <text x="200" y="120" text-anchor="middle" font-size="12" fill="white">85</text>
+      <text x="280" y="120" text-anchor="middle" font-size="12" fill="white">90</text>
+      <text x="360" y="120" text-anchor="middle" font-size="12" fill="white">95</text>
+
+
+    </svg>  
+
+  <script>
+    var bronx=document.getElementsByClassName("Bronx")
+    var brooklyn=document.getElementsByClassName("Brooklyn")
+    var manhattan=document.getElementsByClassName("Manhattan")
+    var queens=document.getElementsByClassName("Queens")
+    var staten_island=document.getElementsByClassName("Staten Island")
+
+
+    for (var i=0; i<bronx.length; i++){
+      bronx[i].style.fill = "hsl(228, 70%, {{100-bx_val}}%)"
+    }
+    for (var i=0; i<brooklyn.length; i++){
+      brooklyn[i].style.fill = "hsl(228, 70%, {{100-bk_val}}%)"
+    }
+    for (var i=0; i<manhattan.length; i++){
+      manhattan[i].style.fill = "hsl(228, 70%, {{100-man_val}}%)"
+    }
+    for (var i=0; i<queens.length; i++){
+      queens[i].style.fill = "hsl(228, 70%, {{100-q_val}}%)"
+    }
+    for (var i=0; i<staten_island.length; i++){
+      staten_island[i].style.fill = "hsl(228, 70%, {{100-si_val}}%)"
+    }
+
+  </script>
+
+  <div class="data-display">
+    <p><strong>This map of NYC compares the number of male dog bites in the 5 boroughs in a given year.</strong></p>
+    <p><strong>Below is the breakdown of dog bites in each NYC borough:</strong></p>
+    <p><strong>Bronx:</strong> {{ bx_val }}</p>
+    <p><strong>Brooklyn:</strong> {{ bk_val }}</p>
+    <p><strong>Manhattan:</strong> {{ man_val }}</p>
+    <p><strong>Queens:</strong> {{ q_val }}</p>
+    <p><strong>Staten island:</strong> {{ si_val }}</p>
+
+  </div>
+
+  
+</body>
+</html>
