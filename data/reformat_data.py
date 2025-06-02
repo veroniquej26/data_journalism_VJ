@@ -1,21 +1,21 @@
 import json
 
 
-f1 = open("data/data_original_2.csv", "r")
+f1 = open("data/data_cleansed.csv", "r")
 lines = f1.readlines()
 #yr_keys = lines[1].strip().split(",")
 
 year_list = []
-year_list = lines[1].split(",")[1:]
+year_list = lines[0].split(",")[1:]
 #print(yr_keys)
 
 dictionary = {}
 
-bronx = lines[2].split(",")[1:]
-brooklyn = lines[3].split(",")[1:]
-manhattan = lines[4].split(",")[1:]
-queens = lines[5].split(",")[1:]
-staten_island = lines[6].split(",")[1:]
+bronx = lines[1].split(",")[1:]
+brooklyn = lines[2].split(",")[1:]
+manhattan = lines[3].split(",")[1:]
+queens = lines[4].split(",")[1:]
+staten_island = lines[5].split(",")[1:]
 #other = lines[7].split(",")[1:]
 
 bronx_dict = {}

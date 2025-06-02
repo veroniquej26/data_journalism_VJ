@@ -9,46 +9,12 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-  <nav class="navbar navbar-expand-lg navbar-white bg-white">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Data Journalism</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/index">Data</a>
-          </li>
-          <li> 
-            <form action="/year" method="GET">
-                <select name="year" id="year_select">
-                </select>
-                <script>
-                const select = document.getElementById("year_select");
-                for (let year = 2015; year <= 2023; year++) {
-                    const option = document.createElement("option");
-                    option.value = year;
-                    option.text = year;
-                    select.appendChild(option);
-                }
-                </script>
-            <input type="submit" value="Submit">
-            <form>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  {% include "navbar.html" %}
+
 
   <h1>Dog Bites in NYC - {{ year }}</h1>
-    {% include 'boroughs.svg' %}
-  </div>
+  {% include 'boroughs.svg' %}
+  
 
   <svg width = 400>
       <rect x="0" y="0" width="80" height="80" fill="hsl(228, 70%, 55%)" stroke="none" stroke-width="2" />

@@ -16,7 +16,7 @@ with open("data/data_bite.json") as f:
 def about():
     return render_template("about.html")
 
-@app.route('/index')
+@app.route('/macro')
 def index():
     f = open("data/data_bite.json", "r")
     data = json.load(f)
@@ -57,7 +57,7 @@ def index():
 
 
     return render_template(
-    "index.html",
+    "macro.html",
     bronx_endpoints = bronx_endpoints,
     brooklyn_endpoints = brooklyn_endpoints,  
     manhattan_endpoints = manhattan_endpoints,
@@ -67,7 +67,7 @@ def index():
     )
 
     print (data)
-@app.route('/year')
+@app.route('/micro')
 
 def year(): 
     f = open("data/data_bite.json", "r")
@@ -84,7 +84,7 @@ def year():
 
     return render_template(
         #"index.html",
-        "year.html",
+        "micro.html",
         year=year,
         bx_val = bx_val,
         bk_val = bk_val,
