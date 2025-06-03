@@ -3,17 +3,18 @@
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">    
   
   <title>Life Expectancy Lab - Veronique Jeneste</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+{% include "navbar.html" %}
+
 <body>
-  {% include "navbar.html" %}
 
 
   <h1>Dog Bites in NYC - {{ year }}</h1>
-  {% include 'boroughs.svg' %}
+    {% include 'boroughs.svg' %}
   
 
   <svg width = 400>
@@ -29,27 +30,27 @@
       <rect x="240" y="80" width="80" height="80" fill="hsl(228, 70%, 10%)" stroke="none" stroke-width="2" />
       <rect x="320" y="80" width="80" height="80" fill="hsl(228, 70%, 5%)" stroke="none" stroke-width="2" />
 
-      <text x="40" y="40" text-anchor="middle" font-size="12" fill="white">50</text>
-      <text x="120" y="40" text-anchor="middle" font-size="12" fill="white">55</text>
-      <text x="200" y="40" text-anchor="middle" font-size="12" fill="white">60</text>
-      <text x="280" y="40" text-anchor="middle" font-size="12" fill="white">65</text>
-      <text x="360" y="40" text-anchor="middle" font-size="12" fill="white">70</text>
+      <text x="40" y="40" text-anchor="middle" font-size="12" fill="white">0</text>
+      <text x="120" y="40" text-anchor="middle" font-size="12" fill="white">50</text>
+      <text x="200" y="40" text-anchor="middle" font-size="12" fill="white">100</text>
+      <text x="280" y="40" text-anchor="middle" font-size="12" fill="white">150</text>
+      <text x="360" y="40" text-anchor="middle" font-size="12" fill="white">200</text>
 
-      <text x="40" y="120" text-anchor="middle" font-size="12" fill="white">75</text>
-      <text x="120" y="120" text-anchor="middle" font-size="12" fill="white">80</text>
-      <text x="200" y="120" text-anchor="middle" font-size="12" fill="white">85</text>
-      <text x="280" y="120" text-anchor="middle" font-size="12" fill="white">90</text>
-      <text x="360" y="120" text-anchor="middle" font-size="12" fill="white">95</text>
+      <text x="40" y="120" text-anchor="middle" font-size="12" fill="white">250</text>
+      <text x="120" y="120" text-anchor="middle" font-size="12" fill="white">300</text>
+      <text x="200" y="120" text-anchor="middle" font-size="12" fill="white">350</text>
+      <text x="280" y="120" text-anchor="middle" font-size="12" fill="white">400</text>
+      <text x="360" y="120" text-anchor="middle" font-size="12" fill="white">450</text>
 
 
     </svg>  
 
   <script>
-    var bronx=document.getElementsByClassName("Bronx")
+    var bronx=document.getElementsByClassName("The_Bronx")
     var brooklyn=document.getElementsByClassName("Brooklyn")
-    var manhattan=document.getElementsByClassName("Manhattan")
+    var manhattan=document.getElementsByClassName("NY")
     var queens=document.getElementsByClassName("Queens")
-    var staten_island=document.getElementsByClassName("Staten Island")
+    var staten_island=document.getElementsByClassName("Staten_Island")
 
 
     for (var i=0; i<bronx.length; i++){
@@ -72,7 +73,7 @@
 
   <div class="data-display">
     <p><strong>This map of NYC compares the number of male dog bites in the 5 boroughs in a given year.</strong></p>
-    <p><strong>Below is the breakdown of dog bites in each NYC borough:</strong></p>
+    <p><strong>Below is the breakdown of dog bites in each NYC borough and their average:</strong></p>
     <p><strong>Bronx:</strong> {{ bx_val }}</p>
     <p><strong>Brooklyn:</strong> {{ bk_val }}</p>
     <p><strong>Manhattan:</strong> {{ man_val }}</p>
@@ -81,6 +82,10 @@
 
   </div>
 
+  <footer>
+    <text>The data source used for this investigation: <a href="https://www.google.com/url?q=https://catalog.data.gov/dataset/dohmh-dog-bite-data&sa=D&source=editors&ust=1748615991949788&usg=AOvVaw3MGWjAJ29pWSiOOQlgDrnn">Data.gov</a>.</text>
+  </footer>
   
+
 </body>
 </html>

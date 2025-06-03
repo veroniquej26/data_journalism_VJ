@@ -14,7 +14,7 @@
 
 <style>
   .line_manhattan:hover line {
-    stroke: black;
+    stroke: green;
     stroke-width: 5;
   }
 </style>
@@ -33,15 +33,25 @@
   }
 </style>
 
+
+<style>
+  .line_avg:hover line {
+    stroke: black;
+    stroke-width: 5;
+  }
+</style>
+
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520" width="500" height="500">
 
 <!--Legend-->
-<rect x="400" y ="10" width = "110" height="80" fill="none" stroke="black" stroke-width="1" rx="5" ry="5"/>
+<rect x="400" y ="10" width = "110" height="100" fill="none" stroke="black" stroke-width="1" rx="5" ry="5"/>
 <text x="455" y="25" text-anchor="middle" font-size="11" fill="red">Bronx</text>
 <text x="455" y="40" text-anchor="middle" font-size="11" fill="blue">Brooklyn</text>
-<text x="455" y="55" text-anchor="middle" font-size="11" fill="black">Manhattan</text>
+<text x="455" y="55" text-anchor="middle" font-size="11" fill="green">Manhattan</text>
 <text x="455" y="70" text-anchor="middle" font-size="11" fill="orange">Queens</text>
 <text x="455" y="85" text-anchor="middle" font-size="11" fill="yellow">Staten Island</text>
+<text x="455" y="100" text-anchor="middle" font-size="11" fill="black">Average</text>
+
 
 
 <g class="line_bronx">
@@ -73,7 +83,7 @@
         y1="{{400 - ((point[0] - 55) * (400/450))}}"
         x2="{{60 + (loop.index0 + 1) * 50}}"
         y2="{{400 - ((point[1] - 55) * (400/450))}}" 
-        stroke="black" stroke-width="2" />
+        stroke="green" stroke-width="2" />
 {% endfor %}
 </g>
 
@@ -97,6 +107,18 @@
         x2="{{60 + (loop.index0 + 1) * 50}}"
         y2="{{405 - ((point[1] - 55) * (400/450))}}" 
         stroke="yellow" stroke-width="2" />
+{% endfor %}
+</g>
+
+
+<g class="line_avg">
+{% for point in avg_endpoints %}
+  <line 
+        x1="{{60 + loop.index0 * 50}}"
+        y1="{{405 - ((point[0] - 55) * (400/450))}}"
+        x2="{{60 + (loop.index0 + 1) * 50}}"
+        y2="{{405 - ((point[1] - 55) * (400/450))}}" stroke-dasharray = "4"
+        stroke="black" stroke-width="2" />
 {% endfor %}
 </g>
 

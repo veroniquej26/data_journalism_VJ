@@ -26,6 +26,7 @@ def index():
     manhattan_endpoints = []
     queens_endpoints = []
     staten_island_endpoints = []
+    avg_endpoints = []
 
     years = sorted([int(y) for y in data["Bronx"].keys()])
 
@@ -53,6 +54,11 @@ def index():
         si_y2 = float(data["Staten Island"][year2])
         staten_island_endpoints.append([si_y1, si_y2])
 
+        avg_y1 = float(bx_y1 + bk_y1 + m_y1 + q_y1 + si_y1)/5
+        avg_y2 = float(bx_y2 + bk_y2 + m_y2 + q_y2 + si_y2)/5
+        avg_endpoints.append([avg_y1, avg_y2])
+
+
 
 
 
@@ -63,6 +69,7 @@ def index():
     manhattan_endpoints = manhattan_endpoints,
     queens_endpoints = queens_endpoints,
     staten_island_endpoints = staten_island_endpoints,
+    avg_endpoints = avg_endpoints,
     years=years
     )
 
@@ -82,15 +89,15 @@ def year():
     si_val = float(data["Staten Island"][str(year)]) 
 
 
+
     return render_template(
-        #"index.html",
         "micro.html",
         year=year,
         bx_val = bx_val,
         bk_val = bk_val,
         man_val = man_val,
         q_val = q_val,
-        si_val = si_val
+        si_val = si_val,
     )
 
 app.run(debug=True)
