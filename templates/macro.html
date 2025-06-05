@@ -20,12 +20,20 @@
     {% include 'line_graph.svg' %}
   </div>
 
-  <text>On average, the number of dog bites in Manhattan is greatest and in Staten Island is the least.</text>
-
-  <footer>
-    <text>The data source used for this investigation: <a href="https://www.google.com/url?q=https://catalog.data.gov/dataset/dohmh-dog-bite-data&sa=D&source=editors&ust=1748615991949788&usg=AOvVaw3MGWjAJ29pWSiOOQlgDrnn">Data.gov</a>.</text>
-  </footer>
+  <div class="takeaways">
+    <ul>
+      <li>On average, Manhattan has the greatest number of reported bites and Staten Island has the least. In 2020, the number of male dog bites in all boroughs decreased, most likely due to the COVID-19 outbreak and quarantine. Afterwards, four boroughs (except for Manhattan) see an slow increase in dog bites.</li>
+    </ul>
+    <ul>
+      <p><strong>Takeaways:</strong><p>
+      <li>This line graph demonstrates the amount of reported male dog bites in each borough. However, it is also possible that some boroughs have more reported bites because its residents are more inclined to report accidents.</li>
+      <li>Before creating this line graph, I believed that boroughs such as Bronx and Brooklyn would have more reported dog bites due to personal experience (I barely see  dogs off of leashes in NYC). But, after further investigation and creating the line graph, I can see that Manhattan has the greatest amount, possibly due to amount of parks and dog parks.</li>
+      <li>Lastly, it is important to note that this line graph only demonstrates the number of male dog bites per borough each year and not the breed of dog. It was easier to distill the information this way. However, if I were to do this project again, I would also try to incorporate the breed of dog because that could raise awareness on the certain breed of dogs that may be more aggressive than others.</li>
+    </ul>
+  </div>
   
+  {% include "footer.html" %}
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

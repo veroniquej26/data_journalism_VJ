@@ -1,91 +1,95 @@
-
 <html>
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">    
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">  
   
-  <title>Life Expectancy Lab - Veronique Jeneste</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Dog Bites in NYC</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-{% include "navbar.html" %}
 
 <body>
-
+  {% include 'navbar.html' %}
 
   <h1>Dog Bites in NYC - {{ year }}</h1>
-    {% include 'boroughs.svg' %}
   
+  <div id="boroughs_all" style="float:left">
+    {% include 'boroughs.svg' %}
+  </div>
+
+
 
   <svg width = 400>
-      <rect x="0" y="0" width="80" height="80" fill="hsl(228, 70%, 55%)" stroke="none" stroke-width="2" />
-      <rect x="80" y="0" width="80" height="80" fill="hsl(228, 70%, 45%)" stroke="none" stroke-width="2" />
-      <rect x="160" y="0" width="80" height="80" fill="hsl(228, 70%, 40%)" stroke="none" stroke-width="2" />
-      <rect x="240" y="0" width="80" height="80" fill="hsl(228, 70%, 35%)" stroke="none" stroke-width="2" />
-      <rect x="320" y="0" width="80" height="80" fill="hsl(228, 70%, 30%)" stroke="none" stroke-width="2" />
-
-      <rect x="0" y="80" width="80" height="80" fill="hsl(228, 70%, 25%)" stroke="none" stroke-width="2" />
-      <rect x="80" y="80" width="80" height="80" fill="hsl(228, 70%, 20%)" stroke="none" stroke-width="2" />
-      <rect x="160" y="80" width="80" height="80" fill="hsl(228, 70%, 15%)" stroke="none" stroke-width="2" />
-      <rect x="240" y="80" width="80" height="80" fill="hsl(228, 70%, 10%)" stroke="none" stroke-width="2" />
-      <rect x="320" y="80" width="80" height="80" fill="hsl(228, 70%, 5%)" stroke="none" stroke-width="2" />
-
-      <text x="40" y="40" text-anchor="middle" font-size="12" fill="white">0</text>
-      <text x="120" y="40" text-anchor="middle" font-size="12" fill="white">50</text>
-      <text x="200" y="40" text-anchor="middle" font-size="12" fill="white">100</text>
-      <text x="280" y="40" text-anchor="middle" font-size="12" fill="white">150</text>
-      <text x="360" y="40" text-anchor="middle" font-size="12" fill="white">200</text>
-
-      <text x="40" y="120" text-anchor="middle" font-size="12" fill="white">250</text>
-      <text x="120" y="120" text-anchor="middle" font-size="12" fill="white">300</text>
-      <text x="200" y="120" text-anchor="middle" font-size="12" fill="white">350</text>
-      <text x="280" y="120" text-anchor="middle" font-size="12" fill="white">400</text>
-      <text x="360" y="120" text-anchor="middle" font-size="12" fill="white">450</text>
+     <rect x="0" y="0" width="80" height="80" fill="hsl(228, 50%, 95%)" stroke="none" stroke-width="2" />
+     <rect x="80" y="0" width="80" height="80" fill="hsl(228, 50%, 80%)" stroke="none" stroke-width="2" />
+     <rect x="160" y="0" width="80" height="80" fill="hsl(228, 50%, 70%)" stroke="none" stroke-width="2" />
+     <rect x="240" y="0" width="80" height="80" fill="hsl(228, 50%, 60%)" stroke="none" stroke-width="2" />
+     <rect x="320" y="0" width="80" height="80" fill="hsl(228, 50%, 50%)" stroke="none" stroke-width="2" />
 
 
-    </svg>  
+     <rect x="0" y="80" width="80" height="80" fill="hsl(228, 50%, 40%)" stroke="none" stroke-width="2" />
+     <rect x="80" y="80" width="80" height="80" fill="hsl(228, 50%, 30%)" stroke="none" stroke-width="2" />
+     <rect x="160" y="80" width="80" height="80" fill="hsl(228, 50%, 20%)" stroke="none" stroke-width="2" />
+     <rect x="240" y="80" width="80" height="80" fill="hsl(228, 50%, 10%)" stroke="none" stroke-width="2" />
+     <rect x="320" y="80" width="80" height="80" fill="hsl(228, 50%, 0%)" stroke="none" stroke-width="2" />
+
+
+     <text x="40" y="40" text-anchor="middle" font-size="12" fill="gray">0</text>
+     <text x="120" y="40" text-anchor="middle" font-size="12" fill="white">50</text>
+     <text x="200" y="40" text-anchor="middle" font-size="12" fill="white">100</text>
+     <text x="280" y="40" text-anchor="middle" font-size="12" fill="white">150</text>
+     <text x="360" y="40" text-anchor="middle" font-size="12" fill="white">200</text>
+
+
+     <text x="40" y="120" text-anchor="middle" font-size="12" fill="white">250</text>
+     <text x="120" y="120" text-anchor="middle" font-size="12" fill="white">300</text>
+     <text x="200" y="120" text-anchor="middle" font-size="12" fill="white">350</text>
+     <text x="280" y="120" text-anchor="middle" font-size="12" fill="white">400</text>
+     <text x="360" y="120" text-anchor="middle" font-size="12" fill="white">450</text>
+  </svg> 
 
   <script>
-    var bronx=document.getElementsByClassName("The_Bronx")
-    var brooklyn=document.getElementsByClassName("Brooklyn")
-    var manhattan=document.getElementsByClassName("NY")
-    var queens=document.getElementsByClassName("Queens")
-    var staten_island=document.getElementsByClassName("Staten_Island")
-
+    var bronx = document.getElementsByClassName("Bronx");
+    var brooklyn = document.getElementsByClassName("Brooklyn");
+    var manhattan = document.getElementsByClassName("Manhattan");
+    var queens = document.getElementsByClassName("Queens");
+    var staten_island = document.getElementsByClassName("Staten-Island");
 
     for (var i=0; i<bronx.length; i++){
-      bronx[i].style.fill = "hsl(228, 70%, {{100-bx_val}}%)"
+      bronx[i].style.fill = "hsl(228, 50%, {{bronx_color}}%)"
     }
     for (var i=0; i<brooklyn.length; i++){
-      brooklyn[i].style.fill = "hsl(228, 70%, {{100-bk_val}}%)"
+      brooklyn[i].style.fill = "hsl(228, 50%, {{brooklyn_color}}%)"
     }
     for (var i=0; i<manhattan.length; i++){
-      manhattan[i].style.fill = "hsl(228, 70%, {{100-man_val}}%)"
+      manhattan[i].style.fill = "hsl(228, 50%, {{manhattan_color}}%)"
     }
     for (var i=0; i<queens.length; i++){
-      queens[i].style.fill = "hsl(228, 70%, {{100-q_val}}%)"
+      queens[i].style.fill = "hsl(228, 50%, {{queens_color}}%)"
     }
     for (var i=0; i<staten_island.length; i++){
-      staten_island[i].style.fill = "hsl(228, 70%, {{100-si_val}}%)"
+      staten_island[i].style.fill = "hsl(228, 50%, {{staten_island_color}}%)"
     }
+    
 
   </script>
 
   <div class="data-display">
+    <p></p>
     <p><strong>This map of NYC compares the number of male dog bites in the 5 boroughs in a given year.</strong></p>
-    <p><strong>Below is the breakdown of dog bites in each NYC borough and their average:</strong></p>
-    <p><strong>Bronx:</strong> {{ bx_val }}</p>
-    <p><strong>Brooklyn:</strong> {{ bk_val }}</p>
-    <p><strong>Manhattan:</strong> {{ man_val }}</p>
-    <p><strong>Queens:</strong> {{ q_val }}</p>
-    <p><strong>Staten island:</strong> {{ si_val }}</p>
-
+    <p><strong>In {{year}}, the average number of bites was {{universal_val}}.</strong></p>
+    <p><strong> Below is the breadown of each borough:</strong></p>
+    <li>The Bronx had <strong>{{bx_val}}</strong> number of bites ({{delta_bx}} away from the average, {{universal_val}})</li>
+    <li>Brooklyn had <strong>{{bk_val}}</strong> number of bites ({{delta_bk}} away from the average, {{universal_val}})</li>
+    <li>Manhattan had <strong>{{man_val}}</strong> number of bites ({{delta_man}} away from the average, {{universal_val}})</li>
+    <li>Queens had <strong>{{q_val}}</strong> number of bites ({{delta_q}} away from the average, {{universal_val}})</li>
+    <li>Staten Island had <strong>{{si_val}}</strong> number of bites ({{delta_si}} away from the average, {{universal_val}})</li>
+    <p></p>
   </div>
 
-  <footer>
-    <text>The data source used for this investigation: <a href="https://www.google.com/url?q=https://catalog.data.gov/dataset/dohmh-dog-bite-data&sa=D&source=editors&ust=1748615991949788&usg=AOvVaw3MGWjAJ29pWSiOOQlgDrnn">Data.gov</a>.</text>
-  </footer>
-  
+  {% include "footer.html" %}
 
 </body>
 </html>

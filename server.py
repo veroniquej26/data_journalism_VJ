@@ -88,6 +88,25 @@ def year():
     q_val = float(data["Queens"][str(year)]) 
     si_val = float(data["Staten Island"][str(year)]) 
 
+    universal_val = (bx_val + bk_val + man_val + q_val + si_val)/5
+
+    # dist from avg --> used for micro state
+
+    delta_bx = round(bx_val - universal_val, 2)
+    delta_bk = round(bk_val - universal_val, 2)
+    delta_man = round(man_val - universal_val, 2)
+    delta_q = round(q_val - universal_val, 2)
+    delta_si = round(si_val - universal_val, 2)
+
+    bronx_color = 100 * (400 - bx_val) / 400
+    brooklyn_color = 100 * (400 - bk_val) / 400
+    manhattan_color = 100 * (400 - man_val) / 400
+    queens_color = 100 * (400 - q_val) / 400
+    staten_island_color = 100 * (400 - si_val) / 400
+
+
+
+
 
 
     return render_template(
@@ -98,7 +117,21 @@ def year():
         man_val = man_val,
         q_val = q_val,
         si_val = si_val,
+
+        universal_val=round(universal_val, 2), 
+        delta_bx=delta_bx,
+        delta_bk = delta_bk,
+        delta_man=delta_man,
+        delta_q=delta_q,
+        delta_si=delta_si,
+
+        bronx_color=bronx_color,
+        brooklyn_color=brooklyn_color,
+        manhattan_color=manhattan_color,
+        queens_color=queens_color,
+        staten_island_color=staten_island_color
     )
 
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
 
