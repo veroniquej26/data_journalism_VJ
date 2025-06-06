@@ -131,15 +131,25 @@
 
 
   <!-- Year labels -->
-  {% for year_label in years %}
-    {% if year_label % 10 == 0 %}
-    <text class="label" x="{{ 60 + loop.index0 * 7 }}" y="465" font-size="15">{{ year_label }}</text>
-     {% endif %}
-  {% endfor %}
+  {% set num_ticks = 9 %}
+  {% set spacing = (450 - 60) / (num_ticks - 1) %} {# axis spans from x=60 to x=450 #}
+  {% for i in range(num_ticks) %}
+  {% set x = 60 + i * spacing %}
+  <!-- Tick -->
+  <line x1="{{ x }}" x2="{{ x }}" y1="445" y2="450" stroke="black" />
 
-  {% for val in range(0, 400, 70) %}
-  <line x1="{{490-val}}" x2="{{490-val}}" y1="444" y2="449" stroke="black" />
-  {% endfor %}
+  <!-- Label -->
+  <text x="60" y="465" font-size="12" text-anchor="middle">2015</text>
+  <text x="110" y="465" font-size="12" text-anchor="middle">2016</text>
+  <text x="160" y="465" font-size="12" text-anchor="middle">2017</text>
+  <text x="210" y="465" font-size="12" text-anchor="middle">2018</text>
+  <text x="260" y="465" font-size="12" text-anchor="middle">2019</text>
+  <text x="310" y="465" font-size="12" text-anchor="middle">2020</text>
+  <text x="360" y="465" font-size="12" text-anchor="middle">2021</text>
+  <text x="410" y="465" font-size="12" text-anchor="middle">2022</text>
+  <text x="460" y="465" font-size="12" text-anchor="middle">2023</text>
+
+{% endfor %}
  
 
 

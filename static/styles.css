@@ -1,8 +1,8 @@
 body{
-    background-color: #b5b1ef;
+    background-color: #b1c4ef;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 900;
+    font-weight: 325;
     font-style: normal;
   }
   
@@ -16,6 +16,7 @@ body{
     position: bottom;
     bottom: 100;
     width: 100%;
+    font-weight: 450;
   }
 
   .navbar-brand {
